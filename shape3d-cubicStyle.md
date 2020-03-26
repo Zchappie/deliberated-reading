@@ -8,4 +8,4 @@ This is a very interesting paper. It's interesting in the sense that the results
 Questions:
 * How to understand the *discriminative geometric styles*? And *generative*?
 
-### ASAP
+### ASAP (As-rigid-as-possible)
