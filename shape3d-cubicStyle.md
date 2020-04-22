@@ -1,14 +1,14 @@
 # Cubic Stylization
 
 ## Questions:
-1. Is there any quantitative measurement to evaluate the result of this method? As it is somehow closely related to artistic creation, the evaluation of stylization is highly rely on the subjective opinion. But I guess this is quite common in computer graphics?
-2. How to understand the *discriminative geometric styles*? And *generative*? *Discriminative means given two styles of a same shape, and to find the transformation from one to the other.*
-3. Why voxelization fails to capture the details and the wide specttrum of cubeness? Is voxelization the same as polycube maps?
+1. Is there any quantitative measurement to evaluate the result of this method? As it is somehow closely related to artistic creation, the evaluation of stylization is highly rely on the subjective opinion. But I guess this is quite common in computer graphics? **Generally true, however, we can still compare computing time etc.**
+2. How to understand the *discriminative geometric styles*? And *generative*? **Discriminative means given two styles of a same shape, and to find the transformation from one to the other.**
+3. Why voxelization fails to capture the details and the wide specttrum of cubeness? Is voxelization the same as polycube maps? **Voxelization has several downsides: it is too memory consuming comparing to mesh, which also leads to restriction on resolution; rotating voxel representations may lead smooth surfaces non-smooth (brick effect).**
 4. A more general question, since I am totally a newbie in the field of computer graphics, are the geometry and lighting the fundamental building blocks of demostrating a shape? In our case, a method raised only from geometry perspective is discussed.
-5. Why only manifold mesh is handled? What about non-manifold ones? Check [blog](http://3dprintingninja.blogspot.com/2014/07/non-manifolds-your-worst-nightmare.html) here about manifold and non-manifold.
+5. Why only manifold mesh is handled? What about non-manifold ones? Check [blog](http://3dprintingninja.blogspot.com/2014/07/non-manifolds-your-worst-nightmare.html) here about manifold and non-manifold. **Manifold mesh are easier to handle, as it has relative simple and nice mathematical properties. Examples: an edge shared by three triangles is hard to handle for most of algorithms; holes in mesh can be handled but cumbersome.**
 6. Related to the energy function
      1. $minimize_{\hat{V}, \{R_i\}} \sum_{i\in V}\sum_{j\in N(i)} \frac{w_{ij}}{2} \lVert R_id_{ij} - \tilde{d}_{ij}\rVert_F^2 + \lambda a_i\lVert R_i \hat{n}_i\rVert_1$
-     2. What does the cotangent weight $w_{ij}$ mean? How to understand it? [Pinkall and Polthier 1993](http://www.cs.jhu.edu/~misha/Fall09/Pinkall93.pdf) or check ASAP section 2.2. *$w_{i,j} = \frac{1}{2}(cot\alpha_{i,j} + cot\beta_{i,j})$, with $\alpha_{i,j},\beta_{i,j}$ are angles opposite of the mesh edge $(i,j)$*. Is the edge shared by two triangles?
+     2. What does the cotangent weight $w_{ij}$ mean? How to understand it? [Pinkall and Polthier 1993](http://www.cs.jhu.edu/~misha/Fall09/Pinkall93.pdf) or check ARAP section 2.2. **$w_{i,j} = \frac{1}{2}(cot\alpha_{i,j} + cot\beta_{i,j})$, with $\alpha_{i,j},\beta_{i,j}$ are angles opposite of the mesh edge $(i,j)$, the edge shared by two triangles.**
      3. $\hat{n}_i$ denoted the unit area-weighted normal vector of a vertex in $\R^3$, what does **area-weighted** mean?
      4. What is the barycentric area, $a_i \in \R^+$? Related to barycentric coordinate?
      5. Is the Frobenius norm used in ASAP part in the energy function a custormized one? Or it comes from the original ASAP? Why using it? *It comes from the original ASAP paper and didn't explain why, I assume it is used to ease the optimization problem. Or somehow related to take different scales of variables into consideration.*
@@ -48,3 +48,4 @@ This is a very interesting paper. It's interesting in the sense that the results
 ## Additional information
 1. Bump mapping: [Bump mapping](https://en.wikipedia.org/wiki/Bump_mapping) is a technique in computer graphics for simulating bumps and wrinkles on the surface of an object. This is achieved by **perturbing the surface normals** of the object and using the perturbed normal during lighting calculations.
 2. [Orthogonal Procrustes problem](https://en.wikipedia.org/wiki/Orthogonal_Procrustes_problem)
+3. General interpretations on triangle mesh: check figures in paper [here](https://www.graphics.rwth-aachen.de/media/papers/slicing1.pdf) about degenerate mesh and its causes.
