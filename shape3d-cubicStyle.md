@@ -1,6 +1,11 @@
-# Cubic Stylization
+## Table of Contents
+- [Motivation](#motivation)
+- [Related works/terminologies](#related-worksterminologies)
+  - [What is the objective:](#what-is-the-objective)
+  - [How to reach the objective?](#how-to-reach-the-objective)
+  - [Additional information](#additional-information)
 
-## Questions:
+## Questions
 1. Is there any quantitative measurement to evaluate the result of this method? As it is somehow closely related to artistic creation, the evaluation of stylization is highly rely on the subjective opinion. But I guess this is quite common in computer graphics? **Generally true, and it still depends on applications, however, we can still compare computing time etc.**
 2. How to understand the *discriminative geometric styles*? And *generative*? **Discriminative means given two styles of a same shape, and to find the transformation from one to the other.**
 3. Why voxelization fails to capture the details and the wide specttrum of cubeness? Is voxelization the same as polycube maps? **Voxelization has several downsides: it is too memory consuming comparing to mesh, which also leads to restriction on resolution; rotating voxel representations may lead smooth surfaces non-smooth (brick effect).**
