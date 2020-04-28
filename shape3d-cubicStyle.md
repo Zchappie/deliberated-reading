@@ -24,8 +24,8 @@
 8.  What does warm startig mean? "Warm starting the local-step parameters from the previous iteration." (after equation 9) **Using the previous step resulting value as the starting point.**
 9.  `V` and `F` in Algorithm 1 mean Vertice and Face? **Yes.**
 10. Why $A = (Q_iQ_i^T)^{-1}Q_i$ is the affine transformation?
-    1.  To solve the linear equation system
-11. Any explanation about why figure 17 happends? "A smaller number of faces keeps details across a wider frequency range; in contrast, a larger one doesn't." **No.**
+    1.  To solve the linear equation system $Q_i^T A = \tilde{Q}_i$ leads to $A =(Q_iQ_i^T )^{-1}Q_i\tilde{Q}_i$, which is not the same as stated in the paper. Why?
+11. Any explanation about why figure 17 happends? "A smaller number of faces keeps details across a wider frequency range; in contrast, a larger one doesn't." **No, no idea about the cause.**
 
 # Motivation
 This is a very interesting paper. It's interesting in the sense that the results of this scientific work narrow down the gap a little bit between an interested layman and an artist in 3D stylization. 
