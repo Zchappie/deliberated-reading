@@ -16,7 +16,7 @@
      2. What does the cotangent weight $w_{ij}$ mean? How to understand it? [Pinkall and Polthier 1993](http://www.cs.jhu.edu/~misha/Fall09/Pinkall93.pdf) or check ARAP section 2.2. **$w_{i,j} = \frac{1}{2}(cot\alpha_{i,j} + cot\beta_{i,j})$, with $\alpha_{i,j},\beta_{i,j}$ are angles opposite of the mesh edge $(i,j)$, the edge shared by two triangles.**
      3. $\hat{n}_i$ denoted the unit area-weighted normal vector of a vertex in $\R^3$, what does **area-weighted** mean? **First find all the normals from the surrounding triangles, then calculate the areas of those triangles, the weigths are propotion to the areas, finally the interpolation of all weighted normals can be seen as the normal vector of the center vertex.**
      4. What is the barycentric area, $a_i \in \R^+$? Related to barycentric coordinate? **Not so important, but one way to calculate the area.**
-     5. Is the Frobenius norm used in ASAP part in the energy function a custormized one? Or it comes from the original ASAP? Why using it? **It comes from the original ASAP paper and didn't explain why, I assume it is used to ease (sum of squares thus convex etc.) the optimization problem. Trick: starts with Frobenius norm everytime in optimization problems, later choose more sophisticated ones.**
+     5. Is the Frobenius norm used in ARAP part in the energy function a custormized one? Or it comes from the original ARAP? Why using it? **It comes from the original ASAP paper and didn't explain why, I assume it is used to ease (sum of squares thus convex etc.) the optimization problem. Trick: starts with Frobenius norm everytime in optimization problems, later choose more sophisticated ones.**
      6. Why cubeness is defined like that? Apart from L1-norm, the parameters. **The rotated normal should somehow alignes (close) to one of the axes.**
      7. *The trivial solution of this energy function $R_i = 0_{3\times3}$ is not achievable because of the ASAP term.* **Wrong, because there is a constraint on $R$, as $R\in SO(3)$**
 7. Related to ADMM
@@ -38,7 +38,7 @@ This is a very interesting paper. It's interesting in the sense that the results
 # Related works/terminologies
 
 ## What is the objective:
-1. [ASAP (As-rigid-as-possible)](https://igl.ethz.ch/projects/ARAP/arap_web.pdf)
+1. [ARAP (As-rigid-as-possible)](https://igl.ethz.ch/projects/ARAP/arap_web.pdf)
 
 2. Sparsity effect of L1 norm
 
