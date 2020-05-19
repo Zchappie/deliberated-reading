@@ -34,6 +34,7 @@
 
 # Motivation
 This is a very interesting paper. It's interesting in the sense that the results of this scientific work narrow down the gap a little bit between an interested layman and an artist in 3D stylization. 
+Why this art emerges? Man-made world tends to consists of sharp edges and flat surfaces, this phenomena addresses the functionality and decoration at the same time. Naturely, people then get an new idea, what if we turn the non-cubic object into cubic shape? And further more, what is we can use computer to control this process? The 3D stylization algorithm can help get rid of challenges currently facing geometric assets and holds applications in architecture and furniture design.
 
 # Related works/terminologies
 
